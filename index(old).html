@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SabahCon Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Responsive Navbar -->
+  <header class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-white shadow space-y-4 md:space-y-0">
+    <!-- Left box (logo or title) -->
+    <div class="w-full md:w-auto flex justify-center md:justify-start">
+      <div class="w-24 h-12 bg-blue-500 text-white flex items-center justify-center rounded-md">
+        LOGO
+      </div>
+    </div>
+
+    <!-- Right buttons -->
+    <div class="flex flex-wrap justify-center md:justify-end space-x-2">
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Home</button>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Event</button>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Map</button>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Contact</button>
+    </div>
+  </header>
+
+  <!-- Responsive Image Box -->
+  <main class="p-4">
+    <div class="w-full aspect-[16/9] bg-gray-300 rounded-lg overflow-hidden">
+      <img 
+        src="images/Sample Image/kavala birthday.gif" 
+        alt="SabahCon preview" 
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </main>
+
+  <!--Slide show-->
+  <style>
+    .slide {
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+
+
+  <!-- Slideshow Container -->
+  <div class="relative w-full max-w-4xl mx-auto aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
+    <!-- Slides -->
+    <div class="absolute inset-0">
+      <img src="images/Sample Image/IMG_0562.PNG" class="slide w-full h-full object-cover opacity-100" />
+      <img src="images/Sample Image/IMG_0563.PNG" class="slide w-full h-full object-cover opacity-0 absolute inset-0" />
+      <img src="images/Sample Image/IMG_0574.PNG" class="slide w-full h-full object-cover opacity-0 absolute inset-0" />
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-700 p-2 rounded-full shadow">
+      &#8592;
+    </button>
+    <button id="next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-700 p-2 rounded-full shadow">
+      &#8594;
+    </button>
+  </div>
+
+  <!-- Script -->
+  <script src="js/slideshow.js"></script>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <!-- Panel -->
+    <div class="group bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105">
+      <div class="relative">
+        <img src="images/Sample Image/IMG_0563.PNG" alt="Panel 1" class="w-full h-48 object-cover brightness-75 group-hover:brightness-100 transition duration-300" />
+        <div class="absolute bottom-0 left-0 w-full p-2 text-white text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
+          Panel 1 Description
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel -->
+    <div class="group bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105">
+      <div class="relative">
+        <img src="images/Sample Image/IMG_0565.PNG" alt="Panel 2" class="w-full h-48 object-cover brightness-75 group-hover:brightness-100 transition duration-300" />
+        <div class="absolute bottom-0 left-0 w-full p-2 text-white text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
+          Panel 2 Description
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel -->
+    <div class="group bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105">
+      <div class="relative">
+        <img src="images/Sample Image/IMG_0574.PNG" alt="Panel 3" class="w-full h-48 object-cover brightness-75 group-hover:brightness-100 transition duration-300" />
+        <div class="absolute bottom-0 left-0 w-full p-2 text-white text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
+          Panel 3 Description
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel -->
+    <div class="group bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105">
+      <div class="relative">
+        <img src="images/Sample Image/IMG_0580.PNG" alt="Panel 4" class="w-full h-48 object-cover brightness-75 group-hover:brightness-100 transition duration-300" />
+        <div class="absolute bottom-0 left-0 w-full p-2 text-white text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
+          Panel 4 Description
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="group bg-white border border-gray-300 rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105">
+        <img src="images/Sample Image/IMG_0580.PNG" alt="Panel 4" class="w-full h-48 object-cover brightness-50 group-hover:brightness-100 transition duration-300" />
+        <div class="absolute bottom-0 left-0 w-full p-2 text-white text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
+          Panel 4 Description
+        </div>
+      </div>
+      <!-- more panels... -->
+
+      <div class="group bg-white border border-gray-300 rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105">
+        <img src="images/Sample Image/IMG_0580.PNG" alt="Panel 4" class="w-full h-48 object-cover brightness-50 group-hover:brightness-100 transition duration-300" />
+        <div class="absolute bottom-0 left-0 w-full p-2 text-white text-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
+          Panel 4 Description
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+
+
+  <div class="relative w-full h-48">
+    <!-- Bottom image -->
+    <img src="images/background.jpg" alt="Background" class="w-full h-full object-cover brightness-75" />
+  
+    <!-- Top image (transparent PNG) -->
+    <img src="images/overlay.png" alt="Overlay" class="absolute top-0 left-0 w-full h-full object-contain pointer-events-none" />
+  </div>
+
+</body>
+
+<footer class="bg-gray-800 text-white mt-12">
+  <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+    
+    <!-- Footer Text -->
+    <p class="text-sm text-center md:text-left">
+      © 2025 SabahCon. All rights reserved.
+    </p>
+
+    <!-- Social Media Icons -->
+    <div class="flex space-x-4">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+        <img src="icons/facebook.svg" alt="Facebook" class="h-6 w-6 hover:opacity-80 transition" />
+      </a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+        <img src="icons/twitter.svg" alt="Twitter" class="h-6 w-6 hover:opacity-80 transition" />
+      </a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+        <img src="icons/instagram.svg" alt="Instagram" class="h-6 w-6 hover:opacity-80 transition" />
+      </a>
+    </div>
+
+  </div>
+</footer>
+</html>
