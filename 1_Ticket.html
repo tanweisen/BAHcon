@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ticket Information</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    /* ===== SECTION 1: HERO ===== */
+    .hero {
+        background-image: url('images/Sample_Image/BAH\ Poster\ 2026_A6.png');
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+
+    /* ===== SECTION 2: INFO ===== */
+    .info {
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+    }
+    .info h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    .info p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* ===== SECTION 3: BOXES ===== */
+    #section3 {
+  padding: 40px 20px;
+  background-color: #f0f0f0; /* Light grey background for section */
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;   /* Center horizontally */
+  align-items: flex-start;   /* Align boxes at the top */
+  flex-wrap: wrap;           /* Wrap on smaller screens */
+  gap: 20px;                 /* Space between boxes */
+  max-width: 1200px;
+  margin: 0 auto;            /* Center container itself */
+}
+
+/* Boxes */
+.box {
+  flex: 0 0 300px; /* Fixed width, no stretching */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+
+  /* Overlay gradient (dark + transparent) */
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Titles inside boxes */
+.box h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+/* Text inside boxes */
+.box p {
+  font-size: 0.95rem;
+}
+    .dot-list {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    }
+
+    .dot-list li {
+        position: relative;
+        padding-left: 20px;
+        margin: 5px 0;
+        color: white; /* Text color */
+    }
+
+    .dot-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 8px;
+        height: 8px;
+        background-color: black;
+        border-radius: 50%;
+    }
+    .box a.button {
+        display: inline-block;
+        margin-top: 15px;
+        background: #ff9800;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .box a.button:hover {
+        background: #e68900;
+    }
+
+    /* ===== SECTION 4: FAQ ===== */
+    .faq {
+        padding: 40px 20px;
+        max-width: 800px;
+        margin: auto;
+    }
+    .faq h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .faq-item {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .faq-question {
+        cursor: pointer;
+        padding: 10px;
+        background: #eee;
+        font-weight: bold;
+    }
+    .faq-answer {
+        display: none;
+        padding: 10px;
+        background: #fafafa;
+    }
+</style>
+</head>
+<body>
+
+ <!-- Responsive Navbar -->
+  <div id="navbar"></div>
+  <script src="navbar.js"></script> 
+
+
+
+<!-- SECTION 1: HERO -->
+<section class="hero">
+    <h1>Ticket Information</h1>
+</section>
+
+<!-- SECTION 2: INFO -->
+<section class="info">
+    <h2>Registration Open Time</h2>
+    <p>Ticket registration starts at 10:00pm on ??? (GMT+8) and ends at 11:59pm on ??? 2026 (GMT+8).
+        This is a 2 days pass. 
+        Everyone get a con book?
+    </p>
+</section>
+
+<!-- SECTION 3: BOXES -->
+ <section id="section3">
+  <div class="container">
+    <div class="box" style="background-image: url('your-background1.jpg');">
+    <img src="images/Tierlist1.png" alt="Icon 1">
+      <h3>Attendee</h3>
+      <p>Some description text goes here.</p>
+      <p>RM70.00</p>
+            <ul class="dot-list">
+                <li>Con Badge</li>
+                <li>Button Badge</li>
+                <li>Con book</li>
+                <li>Poster</li>
+            </ul>
+        <a href="https://example.com" class="button">Book Ticket</a>
+    </div>
+    <div class="box" style="background-image: url('your-background2.jpg');">
+    <img src="images/Tierlist2.png" alt="Icon 2">
+      <h3>Sponsor</h3>
+      <p>Some description text goes here.</p>
+      <p>RM150.00</p>
+            <ul class="dot-list">
+                <li>Con Badge with custom photo</li>
+                <li>Custom Lanyard</li>
+                <li>Keychain</li>
+                <li>Button Badge</li>
+                <li>Con book</li>
+                <li>Poster</li>
+                <li>Sponsor Shirt</li>
+            </ul>
+        <a href="https://example.com" class="button">Book Ticket</a>
+    </div>
+    <div class="box" style="background-image: url('your-background3.jpg');">
+    <img src="images/Tierlist3.png" alt="Icon 2">
+      <h3>Super Sponsor</h3>
+      <p>Some description text goes here.</p>
+      <p>RM250.00</p>
+            <ul class="dot-list">
+                <li>Con Badge with custom photo</li>
+                <li>Custom Lanyard</li>
+                <li>Keychain</li>
+                <li>Button Badge</li>
+                <li>Con book</li>
+                <li>Poster</li>
+                <li>Super Sponsor Shirt</li>
+                <li><b>Assistance to book room with extra discount</b></li>
+            </ul>
+        <a href="https://example.com" class="button">Book Ticket</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 4: FAQ -->
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <div class="faq-question">What is the item ?</div>
+        <div class="faq-answer">U guess.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">When is the event?</div>
+        <div class="faq-answer">The event will be held on [Date].</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Where is it located?</div>
+        <div class="faq-answer">BAH will take place at [Venue].</div>
+    </div>
+</section>
+
+<script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const answer = q.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+
+  <div id="footer"></div>
+  <script src="footer.js"></script>
+
+</body>
+</html>
