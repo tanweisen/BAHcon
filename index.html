@@ -65,13 +65,31 @@
 
 
 <div id="navbar"></div>
-<script src="navbar.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Re-attach toggle logic after navbar is loaded
+      const toggleBtn = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      if (toggleBtn && menu) {
+        toggleBtn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+      }
+    });
+});
+</script>
 
 
 
   <!-- Responsive Image Box -->
   <main class="p-0 m-0">
-    <div class="relative group w-screen h-[1000px] overflow-hidden">
+    <div class="relative group w-screen h-full overflow-hidden">
   
       <!-- Background Image -->
       <img 
@@ -114,208 +132,163 @@
 </main>
 
 
-<section class="relative w-screen h-[1000px] bg-transparent flex items-center justify-center mt-40 pt-80">
-  <!-- Background Image (centered, large) -->
+<section class="relative w-screen min-h-[1000px] bg-transparent flex items-center justify-center mt-20 pt-40">
+  <!-- Background Image -->
   <img 
     src="images/Exports/Homepage/2.Envelope/Envelope.png" 
     alt="Background Center" 
     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-auto opacity-90"
   >
 
-  <!-- Foreground Content (containers above image) -->
-  <div class="relative flex w-4/5 justify-center items-start mt-40 z-10">
-  <!-- Left Container -->
-  <div class="flex-1 flex justify-center">
-    <img src="images/Exports/Homepage/2.Envelope/Envelope_Hotel.png" 
-         alt="Left Image" 
-         class="w-full h-auto" />
-  </div>
+  <!-- Foreground Content -->
+  <div class="relative flex flex-col md:flex-row w-4/5 justify-center items-start mt-40 z-10 gap-6">
+    
+    <!-- Left Container -->
+    <div class="flex-1 flex justify-center">
+      <img src="images/Exports/Homepage/2.Envelope/Envelope_Hotel.png" 
+           alt="Left Image" 
+           class="w-full h-auto" />
+    </div>
 
-  <!-- Right Container -->
-  <div class="flex-1 flex flex-col items-center relative">
-    <!-- First Image (same row as left image) -->
-    <img src="images/Exports/Homepage/2.Envelope/Envelope_Ticket.png" 
-         alt="Right Top" 
-         class="w-full h-auto mb-6" />
+    <!-- Right Container -->
+    <div class="flex-1 flex flex-col items-center relative">
+      <!-- First Image -->
+      <img src="images/Exports/Homepage/2.Envelope/Envelope_Ticket.png" 
+           alt="Right Top" 
+           class="w-full h-auto mb-6" />
 
-    <!-- Second Image (stacked below) -->
-    <div class="relative shrink-0"> <!-- 🚀 prevent shrinking -->
-      <img src="images/Exports/Homepage/2.Envelope/Envelope_Note_Text.png" 
-           alt="Right Bottom" 
-           class="w-full h-auto min-w-[300px]" />
+      <!-- Second Image -->
+      <div class="relative shrink-0">
+        <img src="images/Exports/Homepage/2.Envelope/Envelope_Note_Text.png" 
+             alt="Right Bottom" 
+             class="w-full h-auto min-w-[300px]" />
 
-      <!-- Links on bottom-right of second image -->
-      <div class="absolute bottom-2 right-2 flex space-x-2">
-        <a href="https://example.com/link1" target="_blank">
-          <img src="images/link1.png" 
-               alt="Link 1" 
-               class="w-12 h-12 object-cover rounded-md shadow-md hover:scale-105 transition" />
-        </a>
-        <a href="https://example.com/link2" target="_blank">
-          <img src="images/link2.png" 
-               alt="Link 2" 
-               class="w-12 h-12 object-cover rounded-md shadow-md hover:scale-105 transition" />
-        </a>
+        <!-- Links -->
+        <div class="absolute bottom-2 right-2 flex space-x-2">
+          <a href="https://example.com/link1" target="_blank">
+            <img src="images/link1.png" 
+                 alt="Link 1" 
+                 class="w-12 h-12 object-cover rounded-md shadow-md hover:scale-105 transition" />
+          </a>
+          <a href="https://example.com/link2" target="_blank">
+            <img src="images/link2.png" 
+                 alt="Link 2" 
+                 class="w-12 h-12 object-cover rounded-md shadow-md hover:scale-105 transition" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
   
 
 
 
 <!-- First Section -->
-<section class="relative flex w-full min-h-screen mt-60">
+<section class="relative flex flex-col md:flex-row w-full min-h-screen mt-20 gap-6">
   <!-- Left side with stacked images + background -->
-  <div class="flex-1 relative flex flex-col justify-center items-end bg-cover bg-center pr-12" 
-       style="background-image: url('images/Exports/Homepage/3.Journals/Confetti_BG\ 1.png');">
-        <div class="relative inline-block mb-6 w-1/2">
-          <!-- Main note image -->
-          <img src="images/Exports/Homepage/3.Journals/Note 1.png" 
-              alt="Left Top" 
-              class="w-full h-auto" />
+  <div class="flex-1 relative flex flex-col justify-center items-end bg-cover bg-center pr-12"
+       style="background-image: url('images/Exports/Homepage/3.Journals/Confetti_BG 1.png');">
+       
+    <div class="relative inline-block mb-6 w-1/2">
+      <img src="images/Exports/Homepage/3.Journals/Note 1.png" alt="Left Top" class="w-full h-auto" />
 
-          <!-- Link image (bottom-right, fixed height, with hover effect) -->
-          <a href="https://example.com" target="_blank" 
-            class="absolute bottom-2 right-2">
-            <div class="relative h-12">
-              <img src="images/Exports/Homepage/3.Journals/Button_Ink 1_Default.png" 
-                  alt="Link Icon" 
-                  class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
-              <img src="images/Exports/Homepage/3.Journals/Button_Ink 1_Hover.png" 
-                  alt="Link Icon Hover" 
-                  class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-            </div>
-          </a>
+      <a href="https://example.com" target="_blank" class="absolute bottom-2 right-2">
+        <div class="relative h-12">
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 1_Default.png" alt="Link Icon"
+               class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 1_Hover.png" alt="Link Icon Hover"
+               class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
         </div>
+      </a>
+    </div>
 
-        <div class="relative inline-block w-1/2">
-          <!-- Main note image -->
-          <img src="images/Exports/Homepage/3.Journals/Note 2.png" 
-              alt="Left Bottom" 
-              class="w-full h-auto" />
+    <div class="relative inline-block w-1/2">
+      <img src="images/Exports/Homepage/3.Journals/Note 2.png" alt="Left Bottom" class="w-full h-auto" />
 
-          <!-- Button container (bottom-right, vertical stack, fixed height) -->
-          <div class="absolute bottom-4 right-4 flex flex-col space-y-2">
-            <!-- First Button -->
-            <a href="https://example.com/link1" target="_blank" class="relative h-12">
-              <img src="images/Exports/Homepage/3.Journals/Button_Ink 2A_Default.png" 
-                  alt="Button 1 Normal" 
-                  class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
-              <img src="images/Exports/Homepage/3.Journals/Button_Ink 2A_Hover.png" 
-                  alt="Button 1 Hover" 
-                  class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-            </a>
-
-            <!-- Second Button -->
-            <a href="https://example.com/link2" target="_blank" class="relative h-12">
-              <img src="images/Exports/Homepage/3.Journals/Button_Ink 2B_Default.png"
-                  alt="Button 2 Normal" 
-                  class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
-              <img src="images/Exports/Homepage/3.Journals/Button_Ink 2B_Hover.png" 
-                  alt="Button 2 Hover" 
-                  class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-            </a>
-          </div>
-        </div>
-
-
+      <div class="absolute bottom-4 right-4 flex flex-col space-y-2">
+        <!-- Button 1 -->
+        <a href="https://example.com/link1" target="_blank" class="relative h-12">
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 2A_Default.png" alt="Button 1 Normal"
+               class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 2A_Hover.png" alt="Button 1 Hover"
+               class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        </a>
+        <!-- Button 2 -->
+        <a href="https://example.com/link2" target="_blank" class="relative h-12">
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 2B_Default.png" alt="Button 2 Normal"
+               class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 2B_Hover.png" alt="Button 2 Hover"
+               class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        </a>
+      </div>
+    </div>
   </div>
 
-  <!-- Right side image pinned to right -->
-  <div class="flex-1 relative">
+  <!-- Right side -->
+  <div class="flex-1 relative flex justify-center items-center">
     <img src="images/Exports/Homepage/3.Journals/Book 1.png" 
          alt="Right Side" 
-         class="absolute right-0 top-1/2 -translate-y-1/2 h-auto max-h-[90%]" />
+         class="h-auto max-h-[90%]" />
   </div>
 </section>
 
-<section class="relative flex w-full min-h-screen mt-60">
-  <!-- Left side image pinned left -->
-  <div class="flex-1 relative">
+<!-- Second Section -->
+<section class="relative flex flex-col md:flex-row w-full min-h-screen mt-10 gap-6">
+  <!-- Left side -->
+  <div class="flex-1 relative flex justify-center items-center order-2 md:order-1">
     <img src="images/Exports/Homepage/3.Journals/Book 2.png" 
          alt="Left Side" 
-         class="absolute left-0 top-1/2 -translate-y-1/2 h-auto max-h-[90%]" />
+         class="h-auto max-h-[90%]" />
   </div>
 
   <!-- Right side with stacked images + background -->
-  <div class="flex-1 relative flex flex-col justify-center items-start bg-cover bg-center pl-12" 
-       style="background-image: url('images/Exports/Homepage/3.Journals/Confetti_BG\ 2.png');">
-        <div class="relative inline-block mb-6 w-1/2">
-            <!-- Main note image -->
-            <img src="images/Exports/Homepage/3.Journals/Note 3.png" 
-                alt="Right Top" 
-                class="w-full h-auto" />
+  <div class="flex-1 relative flex flex-col justify-center items-start bg-cover bg-center pl-12 order-1 md:order-2"
+       style="background-image: url('images/Exports/Homepage/3.Journals/Confetti_BG 2.png');">
+       
+    <div class="relative inline-block mb-6 w-1/2">
+      <img src="images/Exports/Homepage/3.Journals/Note 3.png" alt="Right Top" class="w-full h-auto" />
+      <div class="absolute bottom-2 right-2 flex flex-col space-y-2">
+        <!-- 3 Buttons -->
+        <a href="https://example.com/btn1" target="_blank" class="relative h-12">
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 3A_Default.png" alt="Button 1"
+               class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 3A_Hover.png" alt="Button 1 Hover"
+               class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        </a>
+        <a href="https://example.com/btn2" target="_blank" class="relative h-12">
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 3B_Default.png" alt="Button 2"
+               class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 3B_Hover.png" alt="Button 2 Hover"
+               class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        </a>
+        <a href="https://example.com/btn3" target="_blank" class="relative h-12">
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 3C_Default.png" alt="Button 3"
+               class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 3C_Hover.png" alt="Button 3 Hover"
+               class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        </a>
+      </div>
+    </div>
 
-            <!-- 3 buttons (bottom-right, stacked vertically) -->
-            <div class="absolute bottom-2 right-2 flex flex-col space-y-2">
-              <a href="https://example.com/btn1" target="_blank">
-                <div class="relative h-12">
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 3A_Default.png" 
-                      alt="Button 1" 
-                      class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 3A_Hover.png" 
-                      alt="Button 1 Hover" 
-                      class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-                </div>
-              </a>
-
-              <a href="https://example.com/btn2" target="_blank">
-                <div class="relative h-12">
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 3B_Default.png" 
-                      alt="Button 2" 
-                      class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 3B_Hover.png" 
-                      alt="Button 2 Hover" 
-                      class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-                </div>
-              </a>
-
-              <a href="https://example.com/btn3" target="_blank">
-                <div class="relative h-12">
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 3C_Default.png" 
-                      alt="Button 3" 
-                      class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 3C_Hover.png" 
-                      alt="Button 3 Hover" 
-                      class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="relative inline-block w-1/2">
-            <!-- Main note image -->
-            <img src="images/Exports/Homepage/3.Journals/Note 4.png" 
-                alt="Right Bottom" 
-                class="w-full h-auto" />
-
-            <!-- 2 buttons (bottom-right, stacked vertically) -->
-            <div class="absolute bottom-2 right-2 flex flex-col space-y-2">
-              <a href="https://example.com/btn1" target="_blank">
-                <div class="relative h-12">
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 4A_Default.png" 
-                      alt="Button 1" 
-                      class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 4A_Hover.png" 
-                      alt="Button 1 Hover" 
-                      class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-                </div>
-              </a>
-
-              <a href="https://example.com/btn2" target="_blank">
-                <div class="relative h-12">
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 4B_Default.png" 
-                      alt="Button 2" 
-                      class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
-                  <img src="images/Exports/Homepage/3.Journals/Button_Ink 4B_Hover.png" 
-                      alt="Button 2 Hover" 
-                      class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-                </div>
-              </a>
-            </div>
-          </div>
+    <div class="relative inline-block w-1/2">
+      <img src="images/Exports/Homepage/3.Journals/Note 4.png" alt="Right Bottom" class="w-full h-auto" />
+      <div class="absolute bottom-2 right-2 flex flex-col space-y-2">
+        <!-- 2 Buttons -->
+        <a href="https://example.com/btn1" target="_blank" class="relative h-12">
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 4A_Default.png" alt="Button 1"
+               class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 4A_Hover.png" alt="Button 1 Hover"
+               class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        </a>
+        <a href="https://example.com/btn2" target="_blank" class="relative h-12">
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 4B_Default.png" alt="Button 2"
+               class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
+          <img src="images/Exports/Homepage/3.Journals/Button_Ink 4B_Hover.png" alt="Button 2 Hover"
+               class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
