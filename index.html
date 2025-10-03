@@ -11,7 +11,8 @@
   <style>
     html, body {
       overflow-x: hidden;
-      background-color: #175b68;
+      background-color: #ffffff;
+      /* background-color: #175b68; */
     }
     .horizontal-panels {
       display: flex;
@@ -22,6 +23,39 @@
       min-width: 100vw;
       height: 100vh;
       flex-shrink: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;  /* horizontal center */
+      align-items: center;      /* vertical center */
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    .inprogress {
+      max-width: 800px;
+    }
+    .message {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .image-placeholder {
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #666;
+      font-size: 1.2rem;
+      margin: 0 auto;
     }
   </style>
 
@@ -64,7 +98,14 @@
 <body>
 
 
-<div id="navbar"></div>
+  <div class="inprogress">
+    <div class="message">Website Currently in Progress</div>
+    <div class="image-placeholder">
+      <img src="images/A.png" alt="Coming Soon" style="max-width:100%; border-radius:12px;">
+    </div>
+  </div>
+
+<!-- <div id="navbar"></div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   fetch("navbar.html")
@@ -87,11 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  <!-- Responsive Image Box -->
+  <!-- Responsive Image Box -- >
   <main class="p-0 m-0">
     <div class="relative group w-screen h-full overflow-hidden">
   
-      <!-- Background Image -->
+      <!-- Background Image -- >
       <img 
         src="images/Exports/Homepage/1.Cover/BAH 2026_Cover_All.png" 
         alt="Section Background" 
@@ -111,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         <!--
         <img src="images/small-image.png" alt="Small Below Image" class="w-40 h-auto" />
-        -->
+        -- >
       </div>
 
     <!-- Hover Image Links (Right Side, Vertical Stack) 
@@ -126,44 +167,44 @@ document.addEventListener("DOMContentLoaded", function () {
         <img src="images/telegram.png" alt="Thumb 3" class="w-20 h-20 object-cover rounded-lg shadow-lg" />
       </a>
     </div>
-    -->
+    -- >
 
   </div>
 </main>
 
 
 <section class="relative w-screen min-h-[1000px] bg-transparent flex items-center justify-center mt-20 pt-40">
-  <!-- Background Image -->
+  <!-- Background Image -- >
   <img 
     src="images/Exports/Homepage/2.Envelope/Envelope.png" 
     alt="Background Center" 
     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-auto opacity-90"
   >
 
-  <!-- Foreground Content -->
+  <!-- Foreground Content -- >
   <div class="relative flex flex-col md:flex-row w-4/5 justify-center items-start mt-40 z-10 gap-6">
     
-    <!-- Left Container -->
+    <!-- Left Container -- >
     <div class="flex-1 flex justify-center">
       <img src="images/Exports/Homepage/2.Envelope/Envelope_Hotel.png" 
            alt="Left Image" 
            class="w-full h-auto" />
     </div>
 
-    <!-- Right Container -->
+    <!-- Right Container -- >
     <div class="flex-1 flex flex-col items-center relative">
-      <!-- First Image -->
+      <!-- First Image -- >
       <img src="images/Exports/Homepage/2.Envelope/Envelope_Ticket.png" 
            alt="Right Top" 
            class="w-full h-auto mb-6" />
 
-      <!-- Second Image -->
+      <!-- Second Image -- >
       <div class="relative shrink-0">
         <img src="images/Exports/Homepage/2.Envelope/Envelope_Note_Text.png" 
              alt="Right Bottom" 
              class="w-full h-auto min-w-[300px]" />
 
-        <!-- Links -->
+        <!-- Links -- >
         <div class="absolute bottom-2 right-2 flex space-x-2">
           <a href="https://example.com/link1" target="_blank">
             <img src="images/link1.png" 
@@ -184,9 +225,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<!-- First Section -->
+<!-- First Section -- >
 <section class="relative flex flex-col md:flex-row w-full min-h-screen mt-20 gap-6">
-  <!-- Left side with stacked images + background -->
+  <!-- Left side with stacked images + background -- >
   <div class="flex-1 relative flex flex-col justify-center items-end bg-cover bg-center pr-12"
        style="background-image: url('images/Exports/Homepage/3.Journals/Confetti_BG 1.png');">
        
@@ -207,14 +248,14 @@ document.addEventListener("DOMContentLoaded", function () {
       <img src="images/Exports/Homepage/3.Journals/Note 2.png" alt="Left Bottom" class="w-full h-auto" />
 
       <div class="absolute bottom-4 right-4 flex flex-col space-y-2">
-        <!-- Button 1 -->
+        <!-- Button 1 -- >
         <a href="https://example.com/link1" target="_blank" class="relative h-12">
           <img src="images/Exports/Homepage/3.Journals/Button_Ink 2A_Default.png" alt="Button 1 Normal"
                class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
           <img src="images/Exports/Homepage/3.Journals/Button_Ink 2A_Hover.png" alt="Button 1 Hover"
                class="h-full w-auto absolute top-0 left-0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
         </a>
-        <!-- Button 2 -->
+        <!-- Button 2 -- >
         <a href="https://example.com/link2" target="_blank" class="relative h-12">
           <img src="images/Exports/Homepage/3.Journals/Button_Ink 2B_Default.png" alt="Button 2 Normal"
                class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
@@ -225,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 
-  <!-- Right side -->
+  <!-- Right side -- >
   <div class="flex-1 relative flex justify-center items-center">
     <img src="images/Exports/Homepage/3.Journals/Book 1.png" 
          alt="Right Side" 
@@ -233,23 +274,23 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </section>
 
-<!-- Second Section -->
+<!-- Second Section -- >
 <section class="relative flex flex-col md:flex-row w-full min-h-screen mt-10 gap-6">
-  <!-- Left side -->
+  <!-- Left side -- >
   <div class="flex-1 relative flex justify-center items-center order-2 md:order-1">
     <img src="images/Exports/Homepage/3.Journals/Book 2.png" 
          alt="Left Side" 
          class="h-auto max-h-[90%]" />
   </div>
 
-  <!-- Right side with stacked images + background -->
+  <!-- Right side with stacked images + background -- >
   <div class="flex-1 relative flex flex-col justify-center items-start bg-cover bg-center pl-12 order-1 md:order-2"
        style="background-image: url('images/Exports/Homepage/3.Journals/Confetti_BG 2.png');">
        
     <div class="relative inline-block mb-6 w-1/2">
       <img src="images/Exports/Homepage/3.Journals/Note 3.png" alt="Right Top" class="w-full h-auto" />
       <div class="absolute bottom-2 right-2 flex flex-col space-y-2">
-        <!-- 3 Buttons -->
+        <!-- 3 Buttons -- >
         <a href="https://example.com/btn1" target="_blank" class="relative h-12">
           <img src="images/Exports/Homepage/3.Journals/Button_Ink 3A_Default.png" alt="Button 1"
                class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
@@ -274,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="relative inline-block w-1/2">
       <img src="images/Exports/Homepage/3.Journals/Note 4.png" alt="Right Bottom" class="w-full h-auto" />
       <div class="absolute bottom-2 right-2 flex flex-col space-y-2">
-        <!-- 2 Buttons -->
+        <!-- 2 Buttons -- >
         <a href="https://example.com/btn1" target="_blank" class="relative h-12">
           <img src="images/Exports/Homepage/3.Journals/Button_Ink 4A_Default.png" alt="Button 1"
                class="h-full w-auto transition-opacity duration-300 hover:opacity-0" />
@@ -290,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 
@@ -318,10 +359,10 @@ document.addEventListener("DOMContentLoaded", function () {
 -->
 
 
-    <div id="footer"></div>
+    <!-- <div id="footer"></div>
     <script src="footer.js"></script>
-  
+  -->
 
-</body>
+</body> 
 
 </html>
