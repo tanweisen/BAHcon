@@ -1,85 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Header</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<header id="navbar" class="flex items-center justify-between px-4 py-2 fixed top-0 left-0 w-full z-50 font-bold transition-all duration-300 bg-transparent">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="images/BAH_Main_Logo.png" alt="Festival Logo" class="h-10 w-auto" />
+    </a>
 
-<body class="pt-16">
-<header class="flex items-center justify-between px-4 py-2 bg-black bg-opacity-50 fixed top-0 left-0 w-full z-50 font-bold">
-  <!-- Logo -->
-  <a href="index.html" class="flex items-center space-x-2">
-    <img src="images/BAH_Main_Logo.png" alt="Festival Logo" class="h-10 w-auto" />
-  </a>
+    <!-- Hamburger Button (mobile) -->
+    <button id="menu-toggle" class="text-white md:hidden focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
 
-  <!-- Hamburger Button (mobile) -->
-  <button id="menu-toggle" class="text-white md:hidden focus:outline-none">
-    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
+    <!-- Menu Items -->
+    <nav id="menu" class="hidden flex-col md:flex md:flex-row md:space-x-6 absolute md:static top-full left-0 w-full md:w-auto bg-black bg-opacity-90 md:bg-transparent text-white p-4 md:p-0 font-bold">
+      <a href="1_Ticket.html" class="px-4 py-2 border-b-2 border-transparent hover:border-white">Join the Festival!</a>
 
-  <!-- Menu Items -->
-  <nav id="menu" class="hidden flex-col md:flex md:flex-row md:space-x-6 absolute md:static top-full left-0 w-full md:w-auto bg-black bg-opacity-90 md:bg-transparent text-white p-4 md:p-0 font-bold">
-    <a href="1_Ticket.html" class="px-4 py-2 border-b-2 border-transparent hover:border-white">Join the Festival!</a>
-
-    <!-- Festival Info -->
-    <div class="relative group">
-      <button class="px-4 py-2 border-b-2 border-transparent hover:border-white">Festival Info ▼</button>
-      <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 bg-black bg-opacity-90 text-white rounded shadow-md w-40 z-10">
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">Activities</a>
-        <a href="3_Hotel_Info.html" class="block px-4 py-2 hover:bg-gray-700">Venue</a>
+      <!-- Festival Info -->
+      <div class="relative group">
+        <button class="px-4 py-2 border-b-2 border-transparent hover:border-white">Festival Info ▼</button>
+        <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 bg-black bg-opacity-90 text-white rounded shadow-md w-40 z-10">
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">Activities</a>
+          <a href="3_Hotel_Info.html" class="block px-4 py-2 hover:bg-gray-700">Venue</a>
+        </div>
       </div>
-    </div>
 
-    <!-- Sabah Travel Guide -->
-    <div class="relative group">
-      <button class="px-4 py-2 border-b-2 border-transparent hover:border-white">Sabah Travel Guide ▼</button>
-      <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 bg-black bg-opacity-90 text-white rounded shadow-md w-40 z-10">
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">Food</a>
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">Locations</a>
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">Activities</a>
+      <!-- Sabah Travel Guide -->
+      <div class="relative group">
+        <button class="px-4 py-2 border-b-2 border-transparent hover:border-white">Sabah Travel Guide ▼</button>
+        <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 bg-black bg-opacity-90 text-white rounded shadow-md w-40 z-10">
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">Food</a>
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">Locations</a>
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">Activities</a>
+        </div>
       </div>
-    </div>
 
-    <!-- BAH Clans Enrollment -->
-    <div class="relative group">
-      <button class="px-4 py-2 border-b-2 border-transparent hover:border-white">BAH Clans Enrollment ▼</button>
-      <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 bg-black bg-opacity-90 text-white rounded shadow-md w-52 z-10">
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">The Shamans (Panelist)</a>
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">The Totem Bearers (Volunteers)</a>
+      <!-- BAH Clans Enrollment -->
+      <div class="relative group">
+        <button class="px-4 py-2 border-b-2 border-transparent hover:border-white">BAH Clans Enrollment ▼</button>
+        <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 bg-black bg-opacity-90 text-white rounded shadow-md w-52 z-10">
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">The Shamans (Panelist)</a>
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">The Totem Bearers (Volunteers)</a>
+        </div>
       </div>
-    </div>
 
-    <!-- BAH Village Square -->
-    <div class="relative group">
-      <button class="px-4 py-2 border-b-2 border-transparent hover:border-white">BAH Village Square ▼</button>
-      <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 bg-black bg-opacity-90 text-white rounded shadow-md w-40 z-10">
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">About Us</a>
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">Guidelines</a>
-        <a href="" class="block px-4 py-2 hover:bg-gray-700">Contact Us</a>
+      <!-- BAH Village Square -->
+      <div class="relative group">
+        <button class="px-4 py-2 border-b-2 border-transparent hover:border-white">BAH Village Square ▼</button>
+        <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 bg-black bg-opacity-90 text-white rounded shadow-md w-40 z-10">
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">About Us</a>
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">Guidelines</a>
+          <a href="" class="block px-4 py-2 hover:bg-gray-700">Contact Us</a>
+        </div>
       </div>
-    </div>
-  </nav>
-</header>
-
-<!-- Script for toggling mobile menu -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-
-    toggleBtn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-  });
-</script>
-</body>
-</html>
-
-  <!-- 
-  <div id="navbar"></div>
-<script src="navbar.js"></script> 
--->
+    </nav>
+  </header>
