@@ -86,11 +86,9 @@
 
   <script src="navbar.js"></script>
 
-
-
   <!-- Responsive Image Box -->
   <main class="p-0 m-0">
-    <div class="relative group w-screen h-full overflow-hidden">
+    <div class="relative w-screen h-full overflow-hidden">
 
       <!-- Background Image -->
       <img src="images/Exports/Homepage/1.Cover/BAH 2026_Cover_All.png" alt="Section Background"
@@ -103,12 +101,26 @@
           mask-size: 100% 100%;
         ">
 
-      <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
-        <img src="images/Exports/Homepage/1.Cover/BAH 2026_Title.png" alt="Center Image" class="w-280 h-auto mb-6" />
-
-        <!--
-        <img src="images/small-image.png" alt="Small Below Image" class="w-40 h-auto" />
-        -->
+      <div class="absolute inset-0 flex flex-col items-center justify-center z-10 mt-[-10vw]">
+        <img src="images/Exports/Homepage/1.Cover/BAH 2026_Title.png" alt="Center Image" class="w-[28vw] h-auto mb-6" />
+<a href=""
+   class="group relative inline-flex items-center justify-center font-[1000] gap-2 px-[5rem] py-[1.5rem] text-lg bg-[#e8804d] rounded-full hover:bg-[#ffcb65] transition-color duration-1000 overflow-hidden">
+    <!-- Blue  -->
+   <svg class="absolute inset-0 max-w-[120%] h-full z-0 transform group-hover:visible  group-hover:translate-x-[16.4rem] transition-transform duration-500 
+               ease-[cubic-bezier(0.34,1.3,0.8,1)] ml-[-2rem] delay-0 group-hover:delay-100" 
+         viewBox="0 0 700 113" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M11.3408 0H680.376C685.621 0 692 3.48753 692 7.77223L691.433 31.6868V59.2882V80.2135V104.128C692 108.413 685.479 111.9 680.943 111.9L7.37144 112C5.24504 109.509 0 103.53 0 93.3665C0 66.4626 25.8002 56.7971 25.8002 32.8826C25.8002 20.1281 16.4441 3.58719 11.3408 0Z" fill="#54CCC9"/>
+    </svg>
+    <!-- Orange -->
+    <svg class="absolute inset-0 max-w-[120%] h-full z-10 transform group-hover:visible group-hover:translate-x-[16rem] transition-transform duration-500 
+                ease-in-out ml-[-2rem] delay-0 " 
+         viewBox="0 0 700 113" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 0H684.425C691.453 0 700 3.5218 700 7.84861L699.24 31.9982V59.8709V81.0018V105.151C700 109.478 691.263 113 685.185 113L49.3827 112.094C41.0256 107.566 30.5793 97.0009 30.5793 84.9261C30.5793 62.3865 43.6847 60.9777 43.6847 39.7462C44.0646 16.301 10.4463 3.82369 0 0Z" fill="#E8804D"/>
+    </svg>
+    <span class="relative z-20 transition-all text-3xl text-[#fffbe8] group-hover:text-[#1f3359] group-hover:translate-x-[-1.5rem] duration-1000">
+      JOIN NOW 
+    </span>
+</a>
       </div>
 
       <!-- Hover Image Links (Right Side, Vertical Stack) 
@@ -153,28 +165,44 @@
 
       <!-- Left Container -->
       <div class="flex-1 flex justify-center">
-        <img src="images/Exports/Homepage/2.Envelope/Envelope_Hotel.png" alt="Left Image" class="w-full h-auto mt-[270px]" />
+        <img src="images/Exports/Homepage/2.Envelope/Envelope_Hotel.png" alt="Left Image"
+          class="w-full h-auto mt-[270px]" />
       </div>
 
+      
       <!-- Right Container -->
       <div class="flex-1 flex flex-col items-center relative">
         <!-- First Image -->
-        <img src="images/Exports/Homepage/2.Envelope/Envelope_Ticket.png" alt="Right Top" class="w-full h-auto mb-6 pt-[350px]" />
+        <img src="images/Exports/Homepage/2.Envelope/Envelope_Ticket.png" alt="Right Top"
+          class="w-full h-auto mb-6 pt-[350px]" />
+
 
         <!-- Second Image -->
         <div class="relative shrink-0">
-          <img src="images/Exports/Homepage/2.Envelope/Envelope_Note_Text.png" alt="Right Bottom"
-            class="w-full h-auto min-w-[300px]" />
+          <img src="images/Exports/Homepage/2.Envelope/Envelope_Note_Text.png" 
+            alt="Envelope" class="w-full h-auto min-w-[300px]" />
 
-          <!-- Links -->
+      <!-- 覆盖层：文字 -->
+            <p class="absolute top-[1.5vw] left-[1.5vw] 
+           text-[clamp(9px,1.8vw,18px)] leading-[clamp(16px,3vw,32px)] 
+           px-[1vw] py-[0.5vh] rounded-lg">
+              For years, furries in Borneo could only look across the <br>
+              sea, where gatherings were held far from home. Now, in <br>
+              the heart of Kota Kinabalu, the community has finally <br>
+              found its own place to gather. It is a small beginning, yet <br>
+              one filled with hope, excitement, and joy. Here, a new <br>
+              chapter for East Malaysia quietly unfolds...
+            </p>
+
+      <!-- 覆盖层：右下角链接 -->
           <div class="absolute bottom-2 right-2 flex space-x-2">
             <a href="https://example.com/link1" target="_blank">
               <img src="images/link1.png" alt="Link 1"
-                class="w-12 h-12 object-cover rounded-md shadow-md hover:scale-105 transition" />
+                  class="w-12 h-12 object-cover rounded-md shadow-md hover:scale-105 transition" />
             </a>
             <a href="https://example.com/link2" target="_blank">
               <img src="images/link2.png" alt="Link 2"
-                class="w-12 h-12 object-cover rounded-md shadow-md hover:scale-105 transition" />
+                  class="w-12 h-12 object-cover rounded-md shadow-md hover:scale-105 transition" />
             </a>
           </div>
         </div>
