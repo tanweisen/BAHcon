@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const nav = document.querySelector('header#navbar');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 250) {
-          console.log('yes')
           nav.classList.add('bg-[#e8804d]', 'from-transparent', 'to-transparent');
         } else {
           nav.classList.remove('bg-[#e8804d]', 'from-transparent', 'to-transparent');
