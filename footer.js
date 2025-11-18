@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
           btn.classList.remove('opacity-100');
         }
       });
+      footer.classList.add("mt-auto");
     });
 });
 

@@ -164,7 +164,8 @@
           <i>*Note: Upon clicking the buttons of any tier, you will be redirected to a dedicated Google Forms page to
             complete the registration & payment.
             By participating in the event, you have read and agreed to be bound to our <a href="#"
-              class="font-bold"><u>Event Rules</u></a> and <a href="#" class="font-bold"><u>T&C</u></a>.</i></p>
+              class="font-bold"><u>Event Rules</u></a> and <a href="#" class="font-bold"><u>T&C</u></a>.</i>
+        </p>
       </div>
     </section>
 
@@ -497,7 +498,8 @@
                 style="max-height: 0px;">
                 <object data="images/ticket/Divider.svg" type="image/svg+xml" class="shrink-0 w-auto h-auto"></object>
                 <p class="mt-3 text-sm text-white bg-transparent">
-                  You may write in to us at our email admin@borneoanthrohub.com and we'll address it as soon as possible.
+                  You may write in to us at our email admin@borneoanthrohub.com and we'll address it as soon as
+                  possible.
                 </p>
               </div>
             </div>
@@ -565,53 +567,81 @@
   <div id="footer"></div>
   <script src="footer.js"></script>
   <script>
-const TICKET_START = new Date("2025-11-21T22:00:00+08:00").getTime(); // 开售时间 UTC+8
+    const TICKET_START = new Date("2025-11-18T18:10:00+08:00").getTime(); // 开售时间 UTC+8
 
-async function startPreSaleCountdown() {
-  const overlay = document.getElementById("preSaleOverlay");
-  const timerEl = document.getElementById("countdownTimer");
-  const ticketSection = document.getElementById("ticketSection");
+    async function startPreSaleCountdown() {
+      const overlay = document.getElementById("preSaleOverlay");
+      const timerEl = document.getElementById("countdownTimer");
+      const ticketSection = document.getElementById("ticketSection");
 
-  // 获取网络时间
-  const res = await fetch("https://worldtimeapi.org/api/timezone/Asia/Kuala_Lumpur");
-  const data = await res.json();
-  let now = new Date(data.datetime).getTime();
+      // Get internet time
+      const res = await fetch("https://worldtimeapi.org/api/timezone/Asia/Kuching");
+      const data = await res.json();
+      let now = new Date(data.datetime).getTime();
 
-  function updateCountdown() {
-    const remaining = TICKET_START - now;
+      function updateCountdown() {
+        const remaining = TICKET_START - now;
 
-    if (remaining <= 0) {
-      overlay.remove(); // 移除遮罩
-      ticketSection.classList.remove("pointer-events-none"); // 开启点击
-      clearInterval(interval);
-      return;
+        if (remaining <= 0) {
+          overlay.remove(); // 移除遮罩
+          ticketSection.classList.remove("pointer-events-none"); // 开启点击
+          clearInterval(interval);
+          return;
+        }
+
+        const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+        // 天数为0时不显示天数
+        const dayText = days > 0 ? `${days}D ` : "";
+        timerEl.textContent = `${dayText}${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+        now += 1000;
+      }
+
+      // 初始化
+      updateCountdown();
+      const interval = setInterval(updateCountdown, 1000);
+
+      // 阻挡点击
+      ticketSection.classList.add("pointer-events-none");
     }
 
-    const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
-
-    // 天数为0时不显示天数
-    const dayText = days > 0 ? `${days}D ` : "";
-    timerEl.textContent = `${dayText}${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
-
-    now += 1000;
-  }
-
-  // 初始化
-  updateCountdown();
-  const interval = setInterval(updateCountdown, 1000);
-
-  // 阻挡点击
-  ticketSection.classList.add("pointer-events-none");
-}
-
-// 启动倒计时
-startPreSaleCountdown();
+    // 启动倒计时
+    startPreSaleCountdown();
 
 
   </script>
+  <noscript>
+    <style>
+      /* Fullscreen overlay */
+      #noscript-warning {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.85);
+        /* 半透明黑色背景 */
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 1.5rem;
+        padding: 2rem;
+        z-index: 9999;
+      }
+    </style>
+    <div id="noscript-warning">
+      <img src="images/Sean_seem.PNG" alt="Disabled of JS" />
+      ⚠️ JavaScript is disabled in your browser.
+      <br>To use this website properly, please enable JavaScript.
+    </div>
+  </noscript>
 
 </body>
 
